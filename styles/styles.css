@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+* {
+  margin:0;
+  border:0;
+  outline:0;
+  box-sizing: border-box;
+  font-family: 'Alata', sans-serif;
+}
+
+body {
+  background:#535569;
+}
+
+#container {
+  width:100vw;
+  height:100vh;
+  
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  
+  flex-direction: column;
+}
+header {
+  text-align: center;
+}
+header h1 {
+  color:#FFF9C7;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size:32pt;
+}
+header p {
+  color:#868686;
+  width:300px;
+}
+
+textarea, button {
+   font-family: 'Alata', sans-serif;
+}
+
+.codes {
+  margin:10px 0;
+}
+
+.inputArea {
+  width:300px;
+  height:200px;
+  background:#2B2B2B;
+  font-size: 12pt;
+  color:#F6F7FF;
+  overflow:scroll;
+  padding:10px; 
+}
+
+form {
+  display:flex;
+  flex-direction: column;
+}
+
+.compilated {
+  position:relative;
+  color:#EAFFC7;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding:0;
+  text-indent: 10px;
+}
+
+.compilated span {
+  color:#909F96;
+}
+
+.compilated p::before, .compilated span::before {
+  position:absolute;
+  content:"";
+  width:100%;
+  height:1px;
+  background: #6E718E;
+  margin:0 7px 0 ;
+  padding:0;
+  left:-7px;
+}
+
+p.error {
+  color:#FF9292;
+}

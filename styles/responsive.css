@@ -1,0 +1,14 @@
+/*
+  RESPONSIBILITY IT DOESN'T WORK!!
+*/
+
+@media (min-height:1145px) {
+  header h1 {
+    font-size: 35pt;
+  }
+  .inputArea {
+    width:900px;
+    height:600px;
+    font-size:15pt;
+  }
+}
