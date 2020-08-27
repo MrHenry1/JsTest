@@ -1,3 +1,4 @@
+import Execute from './execute.js'
 
 class Code {
   constructor(element) {
@@ -6,10 +7,14 @@ class Code {
   runCode(code) {
     try {
       this.element.innerHTML = ""
-      console.log = (value) => this.loadConsole(value)
-      const codeApply = "<p>" + eval(code) + "</p>"
       
-      codeApply != "<p>undefined</p>" ? this.element.innerHTML += codeApply : ""
+      const send = {js: code}
+      const codeApply = Execute(send)
+      
+      const message = document.createElement("p")
+      message.appendChild(document.createTextNode(codeApply))
+      
+      this.element.appendChild(message)
     }
     catch (err) {
       this.errorCode(err.message)
@@ -22,6 +27,9 @@ class Code {
   }
   
    errorCode(err) {
+     if(!err) {
+       return "Undefined by Execute :)"
+     }
     this.element.innerHTML = "<p class='error'>" + err + "</p>"
   }
 }
@@ -46,21 +54,9 @@ class TestJs {
   }
   
    clearAll() {
-    textArea.value = ""
+    this.textArea.value = ""
   }
 }
 
-const textArea = document.querySelector('textarea')
-const outputElement = document.querySelector('.compilated')
-const form = document.querySelector('form')
 
-const Codificator = new Code(outputElement)
-
-const useInfos = {
-  textArea,
-  form,
-  Codificator
-}
-
-const Test = new TestJs(useInfos)
-
+export { TestJs, Code }
